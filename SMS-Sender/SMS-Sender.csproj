@@ -279,6 +279,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SmsController.cs" />
+    <Compile Include="Core\Models\Cliente.cs" />
+    <Compile Include="Core\Models\Sexo.cs" />
+    <Compile Include="Data\EntityConfigurations\ClienteConfiguration.cs" />
     <Compile Include="Data\SMS-SenderContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -286,6 +289,10 @@
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\IdentityModels.cs" />
     <Compile Include="Core\Models\ManageViewModels.cs" />
+    <Compile Include="Migrations\201805061418296_AgregarTablaCliente.cs" />
+    <Compile Include="Migrations\201805061418296_AgregarTablaCliente.Designer.cs">
+      <DependentUpon>201805061418296_AgregarTablaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -411,6 +418,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805061418296_AgregarTablaCliente.resx">
+      <DependentUpon>201805061418296_AgregarTablaCliente.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

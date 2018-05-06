@@ -1,4 +1,6 @@
-﻿using SMS_Sender.Models;
+﻿using SMS_Sender.Core.Models;
+using SMS_Sender.Data.EntityConfigurations;
+using SMS_Sender.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +12,8 @@ namespace SMS_Sender.Data
 {
     public class SMS_SenderContext : ApplicationDbContext
     {
-        
+        public DbSet<Cliente> Clientes { get; set; }
+
         public SMS_SenderContext()
             : base("SMS-SenderContext")
         {
@@ -22,6 +25,8 @@ namespace SMS_Sender.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Configurations.Add(new ClienteConfiguration());
         }
     }
 }
