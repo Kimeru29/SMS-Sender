@@ -20,14 +20,14 @@ namespace SMS_Sender.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext(string context)
+            : base(context, throwIfV1Schema: false)
         {
         }
 
         public static ApplicationDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new ApplicationDbContext("SMS-SenderContext");
         }
     }
 }
