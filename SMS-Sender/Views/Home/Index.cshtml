@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sms-Sender</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header class="landpage">
+        <div class="texto">
+            <h1>Pide tu crédito con nosotros para obtener los mejores beneficios!</h1>
+            @Html.ActionLink("Pídelo aquí!", "RegistrarNumero", "NexmoSms", new { @class = "btn" })
+            @Html.ActionLink("Quiénes somos?", "AcercaDe", "Home", new { @class = "btn" })
+        </div>
+    </header>
+
+    <footer>
+        <hr />
+        <p>&copy; @DateTime.Now.Year - Sms-Sender</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
