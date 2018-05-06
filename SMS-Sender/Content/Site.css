@@ -1,4 +1,8 @@
-﻿/* -------------------------------------------
+﻿/*
+    Los media queries se encuentran al fondo.
+*/
+
+/* -------------------------------------------
     GENERAL
    ------------------------------------------- */
 html {
@@ -6,12 +10,13 @@ html {
     box-sizing: border-box;
     font-family: 'Lato', Arial, sans-serif;
     text-rendering: optimizeLegibility;
+    max-width: 100%;
 }
 
 body {
     padding-top: 0;
     padding-bottom: 0;
-
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -40,9 +45,9 @@ textarea {
 
 
 /* Encabezado */
-.texto{
+.texto {
     position: absolute;
-    width: 1140px;
+    width: 1100px;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -59,19 +64,23 @@ h1 {
     word-spacing: 4px;
 }
 
-.logo-contenedor{
-    position:relative;
-    width:50%;
+.row{
+    max-width:1150px;
 }
 
-.logo{
+.logo-contenedor {
+    position: relative;
+    width: 50%;
+}
+
+.logo {
     height: 100px;
     width: auto;
     float: left
 }
 
-.empresa{
-    position:absolute;
+.empresa {
+    position: absolute;
     bottom: 0;
     left: 0;
     font-size: 1.5rem;
@@ -81,7 +90,7 @@ h1 {
 
 /* Botones */
 .btnR:link,
-.btnR:visited{
+.btnR:visited {
     display: inline-block;
     padding: 10px 30px;
     font-weight: 300;
@@ -98,7 +107,7 @@ h1 {
 }
 
 .btnR-transp:link,
-.btnR-transp:visited{
+.btnR-transp:visited {
     border: 1px solid #f3969a;
     color: #f3969a;
 }
@@ -128,4 +137,39 @@ header {
     background-image: linear-gradient(rgba(120,194,173, 0.5), rgba(120,194,173, 0.5)), url(Img/fondo.jpg);
     background-size: cover;
     background-position: center;
+}
+
+/* -------------------------------------------
+    Queries
+   ------------------------------------------- */
+@media screen and (max-width: 1200px){
+    .row{padding: 0 2%}
+}
+
+@media screen and (max-width: 1200px){
+    .row { padding: 0 2%; }
+}
+
+@media screen and (max-width:1023px){
+    body{font-size:18px}
+    .texto{
+        width:20px;
+        padding: 0 2%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body{ font-size: 16px; }
+    .row,
+    .texto {
+        width: 20px;
+        padding: 0 2%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .texto {
+        width: 20px;
+        padding: 0 2%;
+    }
 }
