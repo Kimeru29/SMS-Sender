@@ -279,9 +279,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SmsController.cs" />
+    <Compile Include="Core\Interfaces\IClientesRepository.cs" />
+    <Compile Include="Core\Interfaces\IRepository.cs" />
+    <Compile Include="Core\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Core\Models\Cliente.cs" />
     <Compile Include="Core\Models\Sexo.cs" />
     <Compile Include="Data\EntityConfigurations\ClienteConfiguration.cs" />
+    <Compile Include="Data\ImplementacionesInterfaces\ClientesRepository.cs" />
+    <Compile Include="Data\ImplementacionesInterfaces\Repository.cs" />
+    <Compile Include="Data\ImplementacionesInterfaces\UnitOfWork.cs" />
     <Compile Include="Data\SMS-SenderContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
