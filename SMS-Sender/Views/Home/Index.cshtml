@@ -1,30 +1,36 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Sms-Sender</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
-    <header class="landpage">
+    <header>
+        <nav>
+            <div class="row">
+                <img src="~/Content/Img/logo.svg" alt="Sms-Sender logo" class="logo" />
+                <div class="logo-contenedor">
+                    <p class="empresa">Sms-Sender</p>
+                </div>
+            </div>
+        </nav>
         <div class="texto">
-            <h1>Pide tu crédito con nosotros para obtener los mejores beneficios!</h1>
-            @Html.ActionLink("Pídelo aquí!", "RegistrarNumero", "NexmoSms", new { @class = "btn" })
-            @Html.ActionLink("Quiénes somos?", "AcercaDe", "Home", new { @class = "btn" })
+            <h1>Adiós problemas.<br /> ¡Hola crédito Sms-Sender!.</h1>
+            @(Html.ActionLink("Solicítalo aquí", "otra", "SmsController", null, new { @class = "btnR btnR-full" }))
+            @(Html.ActionLink("¿Quiénes somos?", "About", null, new { @class = "btnR btnR-transp" }))
         </div>
     </header>
-
-    <footer>
-        <hr />
-        <p>&copy; @DateTime.Now.Year - Sms-Sender</p>
-    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/popper")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
 </html>

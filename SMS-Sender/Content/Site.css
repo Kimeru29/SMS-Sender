@@ -1,6 +1,17 @@
-﻿body {
+﻿/* -------------------------------------------
+    GENERAL
+   ------------------------------------------- */
+html {
+    font-size: 20px;
+    box-sizing: border-box;
+    font-family: 'Lato', Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+body {
     padding-top: 0;
     padding-bottom: 0;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +32,100 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* -------------------------------------------
+    Reutilizables
+   ------------------------------------------- */
+
+
+/* Encabezado */
+.texto{
+    position: absolute;
+    width: 1140px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+}
+
+.logo-contenedor{
+    position:relative;
+    width:50%;
+}
+
+.logo{
+    height: 100px;
+    width: auto;
+    float: left
+}
+
+.empresa{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Botones */
+.btnR:link,
+.btnR:visited{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btnR-full:link,
+.btnR-full:visited {
+    background-color: #f3969a;
+    border: 1px solid #f3969a;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btnR-transp:link,
+.btnR-transp:visited{
+    border: 1px solid #f3969a;
+    color: #f3969a;
+}
+
+.btnR:hover,
+.btnR:active {
+    background-color: #f0787d;
+    text-decoration: none;
+}
+
+.btnR-full:hover,
+.btnR-full:active {
+    background-color: #f0787d;
+}
+
+.btnR-transp:hover,
+.btnR-transp:active {
+    border: 1px solid #f0787d;
+    color: #fff;
+}
+
+/* -------------------------------------------
+    Otros
+   ------------------------------------------- */
+header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(120,194,173, 0.5), rgba(120,194,173, 0.5)), url(Img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
 }
