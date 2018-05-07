@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SMS_Sender.Core.Interfaces;
+using SMS_Sender.Data;
+using SMS_Sender.Data.ImplementacionesInterfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +11,8 @@ namespace SMS_Sender.Controllers
 {
     public class HomeController : Controller
     {
+        private IUnifOfWork _unitOfWork = new UnitOfWork(new SMS_SenderContext());
+
         public ActionResult Index()
         {
             return View();
@@ -15,9 +20,15 @@ namespace SMS_Sender.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            var James = _unitOfWork.Clientes.Get(1);
 
-            return View();
+            return View(James);
+        }
+
+        public ActionResult Encuestas()
+        {
+            var clientes = _unitOfWork.Clientes.GetAll();
+            return View(clientes);
         }
 
         public ActionResult Contact()

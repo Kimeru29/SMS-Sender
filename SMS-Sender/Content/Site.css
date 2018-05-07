@@ -16,7 +16,6 @@ html {
 body {
     padding-top: 0;
     padding-bottom: 0;
-    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -130,6 +129,31 @@ h1 {
 }
 
 /* -------------------------------------------
+    Tablas
+   ------------------------------------------- */
+.tabla{
+    font-size: 1rem;
+    font-weight: 200;
+    color: white;
+    width: auto;
+    max-width: 50vmax;
+
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.menu {
+    background-color: #ecf0f1;
+    height: 100vh;
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+/* -------------------------------------------
     Otros
    ------------------------------------------- */
 header {
@@ -155,6 +179,12 @@ header {
     .texto{
         width:20px;
         padding: 0 2%;
+    }
+}
+
+@media (max-width:991px) {
+    .form-horizontal.custom-form .form-group .row [class*=col-]:first-child {
+        margin-bottom: 5px
     }
 }
 

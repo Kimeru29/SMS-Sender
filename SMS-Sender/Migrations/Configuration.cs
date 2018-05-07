@@ -23,7 +23,7 @@ namespace SMS_Sender.Migrations
                     Email = "James_Kirk_33@Federation.com",
                     Celular = "+010000000010",
                     Sexo = Sexo.Masculino,
-                    Comentarios = "Kobayashi maru ruined my monthly pay :'(",
+                    Comentarios = "...",
                     Fecha = DateTime.Now
                 },
                 new Cliente()
@@ -32,6 +32,15 @@ namespace SMS_Sender.Migrations
                     Email = "Anakin@JediCouncil.com",
                     Celular = "+020000000020",
                     Sexo = Sexo.Masculino,
+                    Comentarios = "...",
+                    Fecha = DateTime.Now
+                },
+                new Cliente()
+                {
+                    Nombre = "Ellen Ripley",
+                    Email = "Ellen@Yitani.com",
+                    Celular = "+030000000300",
+                    Sexo = Sexo.Femenino,
                     Comentarios = "...",
                     Fecha = DateTime.Now
                 }

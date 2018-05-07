@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SMS_Sender.Core.Models.Cliente>
+
+@{
+    ViewBag.Title = "Encuestas";
+}
+@*
+    Alineamiento total, código tomado de https://stackoverflow.com/questions/42388989/bootstrap-4-center-vertical-and-horizontal-alignment TODO: Leer los docs
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <form class="col-12">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Example label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Another label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                </div>
+            </form>
+        </div>
+    </div>
+*@
+
+<br />
+
+<div class="row">
+    <div class="container">
+        <div class="form-group">
+            <input type="text" class="form-control pull-right" style="width:50%" id="buscador" placeholder="Ingresa el nombre o número para buscar...">
+        </div>
+        <br>
+        <table class="table-bordered table pull-right" id="tabla-clientes" cellspacing="0" style="width: 100%;">
+            <thead>
+                <tr class="bg-primary">
+                    <th>@Html.DisplayNameFor(m => m.Id)</th>
+                    <th>@Html.DisplayNameFor(m => m.Fecha)</th>
+                    <th>@Html.DisplayNameFor(m => m.Nombre)</th>
+                    <th>@Html.DisplayNameFor(m => m.Email)</th>
+                    <th>@Html.DisplayNameFor(m => m.Celular)</th>
+                    <th>@Html.DisplayNameFor(m => m.Comentarios)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cliente in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => cliente.Id)</td>
+                        <td>@Html.DisplayFor(m => cliente.Fecha.ToString("MM/dd/yyyy"))</td>
+                        <td>@Html.DisplayFor(m => cliente.Nombre)</td>
+                        <td>@Html.DisplayFor(m => cliente.Email)</td>
+                        <td>@Html.DisplayFor(m => cliente.Celular)</td>
+                        <td>@Html.DisplayFor(m => cliente.Comentarios)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#buscador").keyup(function () {
+            _this = this;
+            $.each($("#tabla-clientes tbody tr"), function () {
+                if ($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            });
+        });
+    });
+</script>
+
+
+
+

@@ -276,6 +276,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EncuestasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SmsController.cs" />
@@ -298,6 +299,18 @@
     <Compile Include="Migrations\201805061418296_AgregarTablaCliente.cs" />
     <Compile Include="Migrations\201805061418296_AgregarTablaCliente.Designer.cs">
       <DependentUpon>201805061418296_AgregarTablaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805061939150_MetodoSeed.cs" />
+    <Compile Include="Migrations\201805061939150_MetodoSeed.Designer.cs">
+      <DependentUpon>201805061939150_MetodoSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805062243030_FluentAPIMod.cs" />
+    <Compile Include="Migrations\201805062243030_FluentAPIMod.Designer.cs">
+      <DependentUpon>201805062243030_FluentAPIMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805070124133_DbInit.cs" />
+    <Compile Include="Migrations\201805070124133_DbInit.Designer.cs">
+      <DependentUpon>201805070124133_DbInit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -375,7 +388,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -411,6 +423,13 @@
     <Content Include="Views\Verify\Send.cshtml" />
     <Content Include="Views\Verify\Search.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Encuestas.cshtml" />
+    <Content Include="Views\Encuestas\Create.cshtml" />
+    <Content Include="Views\Encuestas\Delete.cshtml" />
+    <Content Include="Views\Encuestas\Details.cshtml" />
+    <Content Include="Views\Encuestas\Edit.cshtml" />
+    <Content Include="Views\Encuestas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -428,6 +447,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805061418296_AgregarTablaCliente.resx">
       <DependentUpon>201805061418296_AgregarTablaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805061939150_MetodoSeed.resx">
+      <DependentUpon>201805061939150_MetodoSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805062243030_FluentAPIMod.resx">
+      <DependentUpon>201805062243030_FluentAPIMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805070124133_DbInit.resx">
+      <DependentUpon>201805070124133_DbInit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
