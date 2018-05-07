@@ -1,9 +1,11 @@
 ﻿using System.Net;
 using System.Web.Mvc;
+using FluentValidation.Results;
 using SMS_Sender.Core.Interfaces;
 using SMS_Sender.Core.Models;
 using SMS_Sender.Data;
 using SMS_Sender.Data.ImplementacionesInterfaces;
+using SMS_Sender.Validaciones;
 
 namespace SMS_Sender.Controllers
 {
@@ -32,11 +34,20 @@ namespace SMS_Sender.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CrearCliente(Cliente cliente)
         {
-            if (ModelState.IsValid)
+            ClienteValidation validar = new ClienteValidation();
+            ValidationResult model = validar.Validate(cliente);
+            if (model.IsValid)
             {
                 _unitOfWork.Clientes.Add(cliente);
                 _unitOfWork.Complete();
                 return RedirectToAction("DetallesCliente");
+            }
+            else
+            {
+                foreach (ValidationFailure _error in model.Errors)
+                {
+                    ModelState.AddModelError(_error.PropertyName, _error.ErrorMessage);
+                }
             }
 
             return View(cliente);
