@@ -43,14 +43,18 @@
             <tbody>
                 @foreach (var cliente in Model)
                 {
-                    <tr>
-                        <td>@Html.DisplayFor(m => cliente.Id)</td>
-                        <td>@Html.DisplayFor(m => cliente.Fecha.ToString("MM/dd/yyyy"))</td>
-                        <td>@Html.DisplayFor(m => cliente.Nombre)</td>
-                        <td>@Html.DisplayFor(m => cliente.Email)</td>
-                        <td>@Html.DisplayFor(m => cliente.Celular)</td>
-                        <td>@Html.DisplayFor(m => cliente.Comentarios)</td>
-                    </tr>
+                <tr>
+                    <td>@Html.DisplayFor(m => cliente.Id)</td>
+                    <td>@Html.DisplayFor(m => cliente.Fecha)</td>
+                    <td>@Html.DisplayFor(m => cliente.Nombre)</td>
+                    <td>@Html.DisplayFor(m => cliente.Email)</td>
+                    <td>@Html.DisplayFor(m => cliente.Celular)</td>
+                    <td>@Html.DisplayFor(m => cliente.Comentarios)</td>
+                    <td>
+                        @Html.ActionLink("Detalles", "DetallesCliente", "EncuestasController", new { id = cliente.Id }, new { @class = "" }) |
+                        @Html.ActionLink("Eliminar", "EliminarCliente", "EncuestasController", new { id = cliente.Id }, new { @class = "" }) |
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

@@ -24,7 +24,7 @@ namespace SMS_Sender.Migrations
                     Celular = "+010000000010",
                     Sexo = Sexo.Masculino,
                     Comentarios = "...",
-                    Fecha = DateTime.Now
+                    //Fecha = DateTime.Now
                 },
                 new Cliente()
                 {
@@ -33,7 +33,7 @@ namespace SMS_Sender.Migrations
                     Celular = "+020000000020",
                     Sexo = Sexo.Masculino,
                     Comentarios = "...",
-                    Fecha = DateTime.Now
+                    //Fecha = DateTime.Now
                 },
                 new Cliente()
                 {
@@ -42,7 +42,7 @@ namespace SMS_Sender.Migrations
                     Celular = "+030000000300",
                     Sexo = Sexo.Femenino,
                     Comentarios = "...",
-                    Fecha = DateTime.Now
+                    //Fecha = DateTime.Now
                 }
             );
         }
