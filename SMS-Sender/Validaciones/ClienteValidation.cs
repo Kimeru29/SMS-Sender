@@ -1,10 +1,5 @@
 ﻿using FluentValidation;
 using SMS_Sender.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web;
 
 namespace SMS_Sender.Validaciones
 {
@@ -16,19 +11,10 @@ namespace SMS_Sender.Validaciones
             RuleFor(c => c.Email).NotEmpty().WithMessage("El campo 'Email' es requerido");
             RuleFor(c => c.Celular).NotEmpty().WithMessage("El campo 'Celular' es requerido");
 
-            RuleFor(c => c.Nombre).Must(NombreSoloLetras).WithMessage("El Campo 'Nombre' solo acepta letras.");
-            RuleFor(c => c.Email).Must(EmailValido).WithMessage("La dirección de 'Email' es inválida.");
+            RuleFor(c => c.Nombre).Matches(@"^[a-zA-Z\s]*$").WithMessage("El Campo 'Nombre' solo acepta letras.");
+            RuleFor(c => c.Email).Matches(@"^[\w.-]+@(?=[a-z\d][^.]*\.)[a-z\d.-]*(?<![.-])$").WithMessage("La dirección de 'Email' es inválida.");
             RuleFor(c => c.Celular).Length(10);
 
         }
-
-        private Regex GetRegex(string regex) => new Regex(regex);
-
-        private bool NombreSoloLetras(string nombre) => GetRegex("@^[a-zA-Z]+$").IsMatch(nombre = "");
-
-        private bool EmailValido(string email) => GetRegex(@"@^[\w.-]+@(?=[a-z\d][^.]*\.)[a-z\d.-]*(?<![.-])$").IsMatch(email = "");
-
-
-        
     }
 }

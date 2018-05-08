@@ -4,21 +4,29 @@
     ViewBag.Title = "Solicitar Crédito";
 }
 
-<h2>Create</h2>
+<div class="block" style="height: 300px" ;>
+    <div class="centered">
+        <div class="row">
+            <div class="">
+                <video width="400" controls>
+                    <source src="https://aupastorage.blob.core.windows.net/videos/presentacionprivaddo.mp4" type="video/mp4">
+                </video>
+            </div>
 
-<div class="mx-auto">
-    @using (Html.BeginForm())
+
+        </div>
+
+
+        @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-
-
+            //Aquí debí utilizar una flexbox, lol
+            <p>En Sms-Sender pensamos en tu <br />bienestar y  nos interesa mejorar<br /> tu calidad de vida.¡Solicita<br /> tu crédito ahora!.</p>
         <div class="form">
-            <h4>Cliente</h4>
-            <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div>
                     @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
                 </div>
@@ -26,46 +34,42 @@
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div>
                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div>
                     @Html.EnumDropDownListFor(model => model.Sexo, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Celular, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div>
                     @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Celular, "", new { @class = "text-danger" })
+
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Comentarios, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div>
                     @Html.EditorFor(model => model.Comentarios, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Comentarios, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Crear Cliente" class="btn btn-lg btn-secondary" />
                 </div>
             </div>
         </div>
-    }
-</div>
-
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+}
+    </div>
 </div>

@@ -442,10 +442,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Verify\Start.cshtml" />
-    <Content Include="Views\Verify\Check.cshtml" />
-    <Content Include="Views\Verify\Send.cshtml" />
-    <Content Include="Views\Verify\Search.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Encuestas.cshtml" />
     <Content Include="Views\Encuestas\CrearCliente.cshtml" />

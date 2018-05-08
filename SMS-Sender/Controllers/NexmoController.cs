@@ -37,8 +37,7 @@ namespace SMS_Sender.Controllers
             }, creds);
             Session["requestID"] = start.request_id;
 
-            // return RedirectToAction(Check);
-            return Content(start.request_id);
+            return RedirectToAction("LigaBitly");
         }
 
         public ActionResult LigaBitly()
@@ -60,7 +59,7 @@ namespace SMS_Sender.Controllers
             string ligaCorta = cliente.DownloadString(liga);
             ViewBag.liga = ligaCorta;
 
-            return Content(ligaCorta);
+            return View();
         }
     }
 }

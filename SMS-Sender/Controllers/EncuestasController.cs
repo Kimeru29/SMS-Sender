@@ -13,6 +13,7 @@ namespace SMS_Sender.Controllers
     {
         private IUnifOfWork _unitOfWork = new UnitOfWork(new SMS_SenderContext());
 
+        //A pesar que nunca habrá un error de manera sistemática agregué la validación del parámetro por si se ingresa a la url de manera manual.
         public ActionResult DetallesCliente(int? id)
         {
             if (id == null)
@@ -40,7 +41,7 @@ namespace SMS_Sender.Controllers
             {
                 _unitOfWork.Clientes.Add(cliente);
                 _unitOfWork.Complete();
-                return RedirectToAction("DetallesCliente");
+                return RedirectToAction("DetallesCliente", new { id = cliente.Id });
             }
             else
             {

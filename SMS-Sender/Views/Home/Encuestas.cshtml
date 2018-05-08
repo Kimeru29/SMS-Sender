@@ -4,7 +4,7 @@
     ViewBag.Title = "Encuestas";
 }
 @*
-    Alineamiento total, código tomado de https://stackoverflow.com/questions/42388989/bootstrap-4-center-vertical-and-horizontal-alignment TODO: Leer los docs
+    Alineamiento total, SOLO BOOTSTRAP 4 Alpha 6+ https://stackoverflow.com/questions/42388989/bootstrap-4-center-vertical-and-horizontal-alignment TODO: Leer los docs
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <form class="col-12">
@@ -22,14 +22,13 @@
 *@
 
 <br />
-
 <div class="row">
     <div class="container">
         <div class="form-group">
             <input type="text" class="form-control pull-right" style="width:50%" id="buscador" placeholder="Ingresa el nombre o número para buscar...">
         </div>
         <br>
-        <table class="table-bordered table pull-right" id="tabla-clientes" cellspacing="0" style="width: 100%;">
+        <table class="table-responsive" id="tabla-clientes" cellspacing="0" style="width: 100%;">
             <thead>
                 <tr class="bg-primary">
                     <th>@Html.DisplayNameFor(m => m.Id)</th>
@@ -38,6 +37,7 @@
                     <th>@Html.DisplayNameFor(m => m.Email)</th>
                     <th>@Html.DisplayNameFor(m => m.Celular)</th>
                     <th>@Html.DisplayNameFor(m => m.Comentarios)</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -51,8 +51,8 @@
                     <td>@Html.DisplayFor(m => cliente.Celular)</td>
                     <td>@Html.DisplayFor(m => cliente.Comentarios)</td>
                     <td>
-                        @Html.ActionLink("Detalles", "DetallesCliente", "EncuestasController", new { id = cliente.Id }, new { @class = "" }) |
-                        @Html.ActionLink("Eliminar", "EliminarCliente", "EncuestasController", new { id = cliente.Id }, new { @class = "" }) |
+                        @Html.ActionLink("Detalles", "DetallesCliente", "Encuestas", new { id = cliente.Id }, new { @class = "" }) |
+                        @Html.ActionLink("Eliminar", "EliminarCliente", "Encuestas", new { id = cliente.Id }, new { @class = "" }) 
                     </td>
                 </tr>
                 }

@@ -1,66 +1,56 @@
 ﻿@model SMS_Sender.Core.Models.Cliente
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Cliente</h4>
+    <h4 style="text-align:center;">Estos son los datos de tu encuesta!</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha)
-        </dt>
+    <div class="block" style="height: 300px" ;>
+        <div class="centered">
+            <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.Fecha)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Sexo)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Sexo)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Celular)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Celular)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Comentarios)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Comentarios)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Sexo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sexo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Celular)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Celular)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Comentarios)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Comentarios)
-        </dd>
-
-    </dl>
+            </dl>
+        </div>
+    </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Ir a la lista de clientes", "Encuestas", "Home", null, null)
 </p>
+

@@ -13,29 +13,20 @@ namespace SMS_Sender.Controllers
     {
         private IUnifOfWork _unitOfWork = new UnitOfWork(new SMS_SenderContext());
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
-        {
-            var James = _unitOfWork.Clientes.Get(1);
-
-            return View(James);
-        }
-
-        public ActionResult Encuestas()
+        public ViewResult Encuestas()
         {
             var clientes = _unitOfWork.Clientes.GetAll();
             return View(clientes);
         }
 
-        public ActionResult Contact()
+        public ContentResult Acerca()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return Content("En construcción");
         }
     }
 }

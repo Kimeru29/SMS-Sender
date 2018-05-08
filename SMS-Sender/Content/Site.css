@@ -1,5 +1,5 @@
 ﻿/*
-    Los media queries se encuentran al fondo.
+    Los media queries al fondo.
 */
 
 /* -------------------------------------------
@@ -42,6 +42,29 @@ textarea {
     Reutilizables
    ------------------------------------------- */
 
+/* Centrado Ghost */
+.block {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.block:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.centered {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+}
+
+video {
+    margin-top: 30px;
+}
 
 /* Encabezado */
 .texto {
@@ -63,8 +86,8 @@ h1 {
     word-spacing: 4px;
 }
 
-.row{
-    max-width:1150px;
+.row {
+    max-width: 1150px;
 }
 
 .logo-contenedor {
@@ -131,13 +154,12 @@ h1 {
 /* -------------------------------------------
     Tablas
    ------------------------------------------- */
-.tabla{
+.tabla {
     font-size: 1rem;
     font-weight: 200;
     color: white;
     width: auto;
     max-width: 50vmax;
-
 }
 
 .nopadding {
@@ -153,6 +175,7 @@ h1 {
     margin: 0;
 }
 
+
 /* -------------------------------------------
     Otros
    ------------------------------------------- */
@@ -163,23 +186,53 @@ header {
     background-position: center;
 }
 
+.prueba {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: green;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+
 /* -------------------------------------------
     Queries
    ------------------------------------------- */
-@media screen and (max-width: 1200px){
-    .row{padding: 0 2%}
+@media screen and (max-width: 1200px) {
+    .row {
+        padding: 0 2%
+    }
 }
 
-@media screen and (max-width: 1200px){
-    .row { padding: 0 2%; }
-}
-
-@media screen and (max-width:1023px){
-    body{font-size:18px}
-    .texto{
-        width:20px;
+@media screen and (max-width: 1200px) {
+    .row {
         padding: 0 2%;
     }
+}
+
+@media screen and (max-width:1023px) {
+    body {
+        font-size: 18px
+    }
+
+    /*.texto {
+        width: 20px;
+        padding: 0 2%;
+    }*/
 }
 
 @media (max-width:991px) {
@@ -189,17 +242,120 @@ header {
 }
 
 @media screen and (max-width: 767px) {
-    body{ font-size: 16px; }
-    .row,
+    body {
+        font-size: 18px;
+    }
+
+    /*.row,
+    /*.texto {
+        width: 20px;
+        padding: 0 2%;
+    }*/
+}
+
+/*@media screen and (max-width: 400px) {
     .texto {
         width: 20px;
         padding: 0 2%;
     }
+}*/
+
+@media only screen and (min-width: 600px) {
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
 }
 
-@media screen and (max-width: 400px) {
-    .texto {
-        width: 20px;
-        padding: 0 2%;
+@media only screen and (min-width: 768px) {
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
     }
 }

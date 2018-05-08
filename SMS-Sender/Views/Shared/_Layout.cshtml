@@ -19,31 +19,28 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    @Html.ActionLink("Inicio", "Index", "Home", null, new { @class = "nav-link"})
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    @Html.ActionLink("Encuestas iniciales", "Encuestas", "Nexmo", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">Encuestas agendadas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Encuestas calidad</a>
                 </li>
             </ul>
+            @*TODO: Implementar*@
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
     </nav> 
 
         @RenderBody()
 
-    <hr />
-    <footer>
-        <p>&copy; @DateTime.Now.Year - Sms-Sender</p>
-    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/popper")
