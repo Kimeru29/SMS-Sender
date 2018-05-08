@@ -13,7 +13,7 @@ namespace SMS_Sender.Validaciones
 
             RuleFor(c => c.Nombre).Matches(@"^[a-zA-Z\s]*$").WithMessage("El Campo 'Nombre' solo acepta letras.");
             RuleFor(c => c.Email).Matches(@"^[\w.-]+@(?=[a-z\d][^.]*\.)[a-z\d.-]*(?<![.-])$").WithMessage("La dirección de 'Email' es inválida.");
-            RuleFor(c => c.Celular).Length(10);
+            RuleFor(c => c.Celular).Length(10).WithMessage("'Celular' debe conformarse de 10 números");
 
         }
     }
