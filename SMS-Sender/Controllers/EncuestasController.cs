@@ -53,40 +53,33 @@ namespace SMS_Sender.Controllers
             return View(cliente);
         }
 
-        // GET: Encuestas/Edit/5
         public ActionResult EditarCliente(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             Cliente cliente = _unitOfWork.Clientes.Get((int)id);
             if (cliente == null)
-            {
                 return HttpNotFound();
-            }
+            
             return View(cliente);
         }
 
-        // GET: Encuestas/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult EliminarCliente(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             Cliente cliente = _unitOfWork.Clientes.Get((int)id);
             if (cliente == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(cliente);
         }
 
-        // POST: Encuestas/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult EliminarCliente(int id)
         {
             Cliente cliente = _unitOfWork.Clientes.Get(id);
             _unitOfWork.Clientes.Remove(cliente);
@@ -97,9 +90,7 @@ namespace SMS_Sender.Controllers
         protected override void Dispose(bool disposing)
         {
             if (disposing)
-            {
                 _unitOfWork.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

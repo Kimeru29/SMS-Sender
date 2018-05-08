@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BitlyDotNET, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bitly.Net.0.0.6.0\lib\BitlyDotNET.dll</HintPath>
+    </Reference>
     <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.7.5.2\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
@@ -291,6 +294,7 @@
     <Compile Include="Controllers\EncuestasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NexmoController.cs" />
     <Compile Include="Controllers\SmsController.cs" />
     <Compile Include="Core\Interfaces\IClientesRepository.cs" />
     <Compile Include="Core\Interfaces\IRepository.cs" />
@@ -447,10 +451,11 @@
     <Content Include="Views\Encuestas\CrearCliente.cshtml" />
     <Content Include="Views\Encuestas\EliminarCliente.cshtml" />
     <Content Include="Views\Encuestas\DetallesCliente.cshtml" />
+    <Content Include="Views\Nexmo\EnviarEncuesta.cshtml" />
+    <Content Include="Views\Nexmo\LigaBitly.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
